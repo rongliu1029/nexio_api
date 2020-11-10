@@ -76,7 +76,7 @@ class API_USERS(MethodView):
 
         #return str(users)
         
-        return jsonify(message = rname + ' has been created!\n' + str(USER_NAME) )
+        return jsonify(message = rname + ' has been created!\n')
     def put(self):
         data = get_data()
         

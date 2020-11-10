@@ -1,10 +1,11 @@
-version: '3'
+version: '3.7'
 
 services:
   api:
     build: .
+    container_name: ${FLASK_API_CONTAINER_NAME}
     ports:
-      - "5000:5000"
+      - "${API_PORT}:${API_PORT}"
     volumes:
-      - /code:/code # 把當前資料夾 mount 掛載進去 container，這樣你可以直接在本地端專案資料夾改動檔案，container 裡面的檔案也會更動也不用重新 build image！
+      - ${DIR_PATH}:/code # 把當前資料夾 mount 掛載進去 container，這樣你可以直接在本地端專案資料夾改動檔案，container 裡面的檔案也會更動也不用重新 build image！
     restart: always
