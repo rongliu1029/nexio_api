@@ -1,8 +1,10 @@
 version: '3'
-  services:
+
+services:
   api:
     build: .
     ports:
-    - "5000:5000"
+      - "5000:5000"
     volumes:
-    - .:/code # 把當前資料夾 mount 掛載進去 container，這樣你可以直接在本地端專案資料夾改動檔案，container 裡面的檔案也會更動也不用重新 build image！
+      - .:/code # 把當前資料夾 mount 掛載進去 container，這樣你可以直接在本地端專案資料夾改動檔案，container 裡面的檔案也會更動也不用重新 build image！
+    restart: always
